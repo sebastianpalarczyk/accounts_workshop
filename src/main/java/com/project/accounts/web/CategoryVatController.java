@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Controller
-@RequestMapping(value = "/category")
+@RequestMapping(value = "/accounts/category")
 public class CategoryVatController {
 
     private final CategoryVatRepository categoryVatRepository;

@@ -24,6 +24,8 @@ public class Bill {
     @OneToOne
     @JoinColumn(name = "category_id")
     private CategoryVat category;
+    @ManyToOne
+    private User user;
 
     @PrePersist
     public void prePersist() {
@@ -38,10 +40,9 @@ public class Bill {
     public Bill() {
     }
 
-    public Bill(Long id, LocalDate date, String nameContractor,
-                String number, double netAmount, double grossAmount,
-                double vatAmount, LocalDateTime created,
-                LocalDateTime updated, CategoryVat category) {
+    public Bill(Long id, LocalDate date, String nameContractor, String number,
+                double netAmount, double grossAmount, double vatAmount, LocalDateTime created,
+                LocalDateTime updated, CategoryVat category, User user) {
         this.id = id;
         this.date = date;
         this.nameContractor = nameContractor;
@@ -52,6 +53,7 @@ public class Bill {
         this.created = created;
         this.updated = updated;
         this.category = category;
+        this.user = user;
     }
 
     public Long getId() {
@@ -134,6 +136,14 @@ public class Bill {
         this.vatAmount = vatAmount;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Bill{" +
@@ -147,6 +157,7 @@ public class Bill {
                 ", created=" + created +
                 ", updated=" + updated +
                 ", category=" + category +
+                ", user=" + user +
                 '}';
     }
 }

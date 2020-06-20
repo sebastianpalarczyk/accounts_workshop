@@ -13,6 +13,7 @@
 </head>
 <body>
 <form:form method="POST" modelAttribute="bill">
+    <br> <form:hidden path="user" value = /><br>
     Data: <br> <form:input path="date"/><br>
 <%--    <form:errors path="date"/><br>--%>
     Nazwa kontrahenta: <br> <form:input path="nameContractor"/><br>
