@@ -26,8 +26,8 @@ public class UserController {
     @ResponseBody
     public String createUser() {
         User user = new User();
-        user.setUsername("admin");
-        user.setPassword("admin");
+        user.setUsername("admin2");
+        user.setPassword("2");
         userService.saveUser(user);
         return "admin";
     }

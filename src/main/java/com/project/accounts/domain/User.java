@@ -21,18 +21,22 @@ public class User {
     @OneToMany
     @JoinColumn(name = "user_id")
     private List<Bill> bills;
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<Consolidated> consolidatedList;
 
     public User() {
     }
 
-    public User(Long id, String username, String password, int enabled,
-                Set<Role> roles, List<Bill> bills) {
+    public User(Long id, String username, String password, int enabled, Set<Role> roles,
+                List<Bill> bills, List<Consolidated> consolidatedList) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.enabled = enabled;
         this.roles = roles;
         this.bills = bills;
+        this.consolidatedList = consolidatedList;
     }
 
     public Long getId() {
@@ -81,5 +85,13 @@ public class User {
 
     public void setBills(List<Bill> bills) {
         this.bills = bills;
+    }
+
+    public List<Consolidated> getConsolidatedList() {
+        return consolidatedList;
+    }
+
+    public void setConsolidatedList(List<Consolidated> consolidatedList) {
+        this.consolidatedList = consolidatedList;
     }
 }

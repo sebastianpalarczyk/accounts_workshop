@@ -12,6 +12,8 @@
     <title>Title</title>
 </head>
 <body>
+<a href="http://localhost:8080/accounts/menu">Powrót do menu</a><br>
+<a href="http://localhost:8080/accounts/logout">Wyloguj</a><br>
 <form:form method="POST" modelAttribute="category">
     Nazwa: <br> <form:input path="name"/><br>
     <%--    <form:errors path="name"/><br>--%>

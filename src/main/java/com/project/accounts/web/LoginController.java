@@ -12,7 +12,7 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @RequestMapping(value = "/accounts/logout", method = RequestMethod.GET)
     public String logout(){
         return "logout";
     }

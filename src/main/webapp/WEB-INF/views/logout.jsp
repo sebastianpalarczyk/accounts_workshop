@@ -12,6 +12,7 @@
     <title>Title</title>
 </head>
 <body>
+<a href="http://localhost:8080/accounts/menu">Powrót do menu</a><br>
 <form action="<c:url value="/logout"/>" method="post">
     <input class="fa fa-id-badge" type="submit" value="Wyloguj">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

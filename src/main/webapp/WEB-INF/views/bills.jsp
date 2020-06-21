@@ -12,6 +12,8 @@
     <title>Title</title>
 </head>
 <body>
+<a href="http://localhost:8080/accounts/menu">Powrót do menu</a><br>
+<a href="http://localhost:8080/accounts/logout">Wyloguj</a><br>
 <tbody>
 <c:forEach items="${bills}" var="bill">
 <tr>
@@ -21,8 +23,8 @@
     <td><c:out value = "${bill.netAmount}"/></td>
     <td><c:out value = "${bill.grossAmount}"/></td>
     <td><c:out value = "${bill.updated}"/></td>
-    <td><a href="http://localhost:8080/bill/updateForm/${bill.id}">Edytuj</a></td>
-    <td><a href="http://localhost:8080/bill/delete/${bill.id}">Usuń</a></td><br>
+    <td><a href="http://localhost:8080/accouts/bill/updateForm/${bill.id}">Edytuj</a></td>
+    <td><a href="http://localhost:8080/accounts/bill/delete/${bill.id}">Usuń</a></td><br>
 </tr>
 </c:forEach>
 

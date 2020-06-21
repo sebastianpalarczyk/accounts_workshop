@@ -5,8 +5,8 @@ import com.project.accounts.domain.CategoryVat;
 import com.project.accounts.domain.User;
 import com.project.accounts.repository.BillRepository;
 import com.project.accounts.repository.CategoryVatRepository;
-import com.project.accounts.repository.UserRepository;
 import com.project.accounts.service.CurrentUser;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +20,11 @@ public class BillController {
 
     private final BillRepository billRepository;
     private final CategoryVatRepository categoryVatRepository;
-    private final UserRepository userRepository;
 
-    public BillController(BillRepository billRepository, CategoryVatRepository categoryVatRepository, UserRepository userRepository) {
+
+    public BillController(BillRepository billRepository, CategoryVatRepository categoryVatRepository) {
         this.billRepository = billRepository;
         this.categoryVatRepository = categoryVatRepository;
-        this.userRepository = userRepository;
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
@@ -35,26 +34,29 @@ public class BillController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String create(@ModelAttribute Bill bill){
+    public String create(@ModelAttribute Bill bill,@AuthenticationPrincipal CurrentUser customUser){
+        User user = customUser.getUser();
         bill.prePersist();
         double grossAmount = bill.getNetAmount()*1.23;
         bill.setGrossAmount(grossAmount);
         double vatAmount = grossAmount - bill.getNetAmount();
         bill.setVatAmount(vatAmount);
+        bill.setUser(user);
         billRepository.save(bill);
-        return "redirect:/bill/add";
+        return "redirect:/accounts/bill/add";
     }
 
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable long id) {
         Optional<Bill> bill = billRepository.findById(id);
         billRepository.delete(bill.get());;
-        return "redirect:/bill/all";
+        return "redirect:/accounts/bill/all";
     }
 
     @GetMapping("/all")
-    public String getAll(Model model){
-        List<Bill> bills = billRepository.findAll();
+    public String getAll(Model model, @AuthenticationPrincipal CurrentUser customUser){
+        User user = customUser.getUser();
+        List<Bill> bills = billRepository.findAllByUser(user);
         model.addAttribute("bills", bills);
         return "bills";
     }

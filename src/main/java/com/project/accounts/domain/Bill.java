@@ -26,6 +26,7 @@ public class Bill {
     private CategoryVat category;
     @ManyToOne
     private User user;
+    private String type;
 
     @PrePersist
     public void prePersist() {
@@ -42,7 +43,7 @@ public class Bill {
 
     public Bill(Long id, LocalDate date, String nameContractor, String number,
                 double netAmount, double grossAmount, double vatAmount, LocalDateTime created,
-                LocalDateTime updated, CategoryVat category, User user) {
+                LocalDateTime updated, CategoryVat category, User user, String type) {
         this.id = id;
         this.date = date;
         this.nameContractor = nameContractor;
@@ -54,6 +55,7 @@ public class Bill {
         this.updated = updated;
         this.category = category;
         this.user = user;
+        this.type = type;
     }
 
     public Long getId() {
@@ -144,6 +146,14 @@ public class Bill {
         this.user = user;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "Bill{" +
@@ -158,6 +168,7 @@ public class Bill {
                 ", updated=" + updated +
                 ", category=" + category +
                 ", user=" + user +
+                ", type='" + type + '\'' +
                 '}';
     }
 }
