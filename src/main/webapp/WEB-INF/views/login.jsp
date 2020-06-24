@@ -12,6 +12,7 @@
 </head>
 <body>
 <form method="post">
+    <label>Logowanie do aplikacji</label>
     <div><label> Nazwa użytkownika : <input type="text" name="username"/> </label></div>
     <div><label> Hasło: <input type="password" name="password"/> </label></div>
     <div><input type="submit" value="Zaloguj"/></div>

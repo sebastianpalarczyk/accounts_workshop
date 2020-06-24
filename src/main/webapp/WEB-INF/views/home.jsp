@@ -11,6 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<a href="http://localhost:8080/login">LOGOWANIE</a>
+<a href="http://localhost:8080/user/add">ZAŁOŻENIE KONTA</a><br>
+<a href="http://localhost:8080/login">LOGOWANIE</a><br>
+
 </body>
 </html>

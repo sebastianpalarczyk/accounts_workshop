@@ -14,7 +14,11 @@
 <body>
 <a href="http://localhost:8080/accounts/menu">Powrót do menu</a><br>
 <a href="http://localhost:8080/accounts/logout">Wyloguj</a><br>
-Vat do zapłaty: ${resultVat}<br>
-Podatek Pit do zapłaty: ${resultPit}
+Podatek Vat do zapłaty w bieżącym miesiącu: ${resultVat}<br>
+Podatek Pit do zapłaty w bieżącym miesiącu: ${resultPit}<br>
+Vat I kwartał: ${vatFirstQuarter}<br>
+Vat II kwartał: ${vatSecondQuarter}<br>
+Vat III kwartał: ${vatThirdQuarter}<br>
+Vat IV kwartał: ${vatFourthQuarter}<br>
 </body>
 </html>

@@ -36,8 +36,16 @@ public class ConsolidatedController {
         List<Bill> billList = consolidatedService.searchBills(allByUser);
         double resultVat = consolidatedService.resultVat(billList);
         double resultPit = consolidatedService.resultTaxPit(billList);
+        double vatFirstQuarter = consolidatedService.resultVatFirstQuarter(allByUser);
+        double vatSecondQuarter = consolidatedService.resultVatSecondQuarter(allByUser);
+        double vatThirdQuarter = consolidatedService.resultVatThirdQuarter(allByUser);
+        double vatFourthQuarter = consolidatedService.resultVatFourthQuarter(allByUser);
         model.addAttribute("resultVat", resultVat);
         model.addAttribute("resultPit", resultPit);
+        model.addAttribute("vatFirstQuarter", vatFirstQuarter);
+        model.addAttribute("vatSecondQuarter", vatSecondQuarter);
+        model.addAttribute("vatThirdQuarter", vatThirdQuarter);
+        model.addAttribute("vatFourthQuarter", vatFourthQuarter);
         return "consolidated";
     }
 
