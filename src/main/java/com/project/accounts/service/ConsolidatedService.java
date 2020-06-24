@@ -13,12 +13,8 @@ public class ConsolidatedService {
     int year = LocalDate.now().getYear();
 
     public double resultVat(List<Bill> bills){
-        double sumVatRevenue = bills.stream()
-                .filter(e->e.getType().equals("P"))
-                .mapToDouble(Bill::getVatAmount).sum();
-        double sumVatCost = bills.stream()
-                .filter(e->e.getType().equals("K"))
-                .mapToDouble(Bill::getVatAmount).sum();
+        double sumVatRevenue = searchGrossAmount(bills,"P");
+        double sumVatCost = searchGrossAmount(bills,"K");
         double result = sumVatRevenue - sumVatCost;
         return result;
     }
@@ -33,69 +29,69 @@ public class ConsolidatedService {
     }
 
     public double resultTaxPit(List<Bill> bills){
-        double sumNetRevenue = bills.stream()
-                .filter(e->e.getType().equals("P"))
-                .mapToDouble(Bill::getNetAmount).sum();
-        double sumNetCost = bills.stream()
-                .filter(e->e.getType().equals("K"))
-                .mapToDouble(Bill::getNetAmount).sum();
+        double sumNetRevenue = searchNetAmount(bills,"P");
+        double sumNetCost = searchNetAmount(bills,"K");
         double taxBase = sumNetRevenue - sumNetCost - 735.19;
         double taxPit = ((taxBase*18)/100 - 45.67);
         return roundDouble(taxPit);
     }
 
     public double resultVatFirstQuarter(List<Bill> bills){
-        double sumVatRevenue = bills.stream()
-                .filter(e -> e.getDate().getYear() == year)
-                .filter(e-> e.getDate().getMonth().getValue() < 4)
-                .filter(e->e.getType().equals("P"))
-                .mapToDouble(Bill::getVatAmount).sum();
-        double sumVatCost = bills.stream()
-                .filter(e->e.getType().equals("K"))
-                .mapToDouble(Bill::getVatAmount).sum();
+        double sumVatRevenue = sumVatRevenueQuarter(bills,0,4);
+        double sumVatCost = sumVatCostQuarter(bills,0,4);
         double result = sumVatRevenue - sumVatCost;
         return result;
     }
 
     public double resultVatSecondQuarter(List<Bill> bills){
-        double sumVatRevenue = bills.stream()
-                .filter(e -> e.getDate().getYear() == year)
-                .filter(e-> e.getDate().getMonth().getValue() > 3)
-                .filter(e-> e.getDate().getMonth().getValue() < 7)
-                .filter(e->e.getType().equals("P"))
-                .mapToDouble(Bill::getVatAmount).sum();
-        double sumVatCost = bills.stream()
-                .filter(e->e.getType().equals("K"))
-                .mapToDouble(Bill::getVatAmount).sum();
+        double sumVatRevenue = sumVatRevenueQuarter(bills,3,7);
+        double sumVatCost = sumVatCostQuarter(bills,3,7);
         double result = sumVatRevenue - sumVatCost;
         return result;
     }
 
     public double resultVatThirdQuarter(List<Bill> bills){
-        double sumVatRevenue = bills.stream()
-                .filter(e -> e.getDate().getYear() == year)
-                .filter(e-> e.getDate().getMonth().getValue() > 6)
-                .filter(e-> e.getDate().getMonth().getValue() < 10)
-                .filter(e->e.getType().equals("P"))
-                .mapToDouble(Bill::getVatAmount).sum();
-        double sumVatCost = bills.stream()
-                .filter(e->e.getType().equals("K"))
-                .mapToDouble(Bill::getVatAmount).sum();
+        double sumVatRevenue = sumVatRevenueQuarter(bills,6,10);
+        double sumVatCost = sumVatCostQuarter(bills,6,10);
         double result = sumVatRevenue - sumVatCost;
         return result;
     }
 
     public double resultVatFourthQuarter(List<Bill> bills){
-        double sumVatRevenue = bills.stream()
-                .filter(e -> e.getDate().getYear() == year)
-                .filter(e-> e.getDate().getMonth().getValue() > 9)
-                .filter(e->e.getType().equals("P"))
-                .mapToDouble(Bill::getVatAmount).sum();
-        double sumVatCost = bills.stream()
-                .filter(e->e.getType().equals("K"))
-                .mapToDouble(Bill::getVatAmount).sum();
+        double sumVatRevenue = sumVatRevenueQuarter(bills,9,13);
+        double sumVatCost = sumVatCostQuarter(bills,9,13);
         double result = sumVatRevenue - sumVatCost;
         return result;
+    }
+
+    public double searchNetAmount(List<Bill> bills, String parameter){
+        return bills.stream()
+                .filter(e->e.getType().equals(parameter))
+                .mapToDouble(Bill::getNetAmount).sum();
+    }
+
+    public double searchGrossAmount(List<Bill> bills, String parameter){
+        return bills.stream()
+                .filter(e->e.getType().equals(parameter))
+                .mapToDouble(Bill::getVatAmount).sum();
+    }
+
+    public double sumVatRevenueQuarter(List<Bill> bills, int a, int b) {
+        return bills.stream()
+                .filter(e -> e.getDate().getYear() == year)
+                .filter(e -> e.getDate().getMonth().getValue() > a)
+                .filter(e -> e.getDate().getMonth().getValue() < b)
+                .filter(e -> e.getType().equals("P"))
+                .mapToDouble(Bill::getVatAmount).sum();
+    }
+
+    public double sumVatCostQuarter(List<Bill> bills, int a, int b) {
+        return bills.stream()
+                .filter(e -> e.getDate().getYear() == year)
+                .filter(e -> e.getDate().getMonth().getValue() > a)
+                .filter(e -> e.getDate().getMonth().getValue() < b)
+                .filter(e -> e.getType().equals("K"))
+                .mapToDouble(Bill::getVatAmount).sum();
     }
 
     public double roundDouble(double amount){
