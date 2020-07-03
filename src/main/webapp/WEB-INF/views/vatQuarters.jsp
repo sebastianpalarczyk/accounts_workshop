@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: sebastian
-  Date: 21.06.2020
-  Time: 11:40
+  Date: 03.07.2020
+  Time: 17:25
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -22,6 +22,9 @@
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anomous">
 </head>
 <body>
+
+<jsp:include page="header.jsp"></jsp:include>
+
 <section class="padding-large bg-light">
     <div id="carouselExampleControls" class="carousel slide main-slider" data-ride="carousel">
         <div class="carousel-inner container">
@@ -64,12 +67,10 @@
     </div>
 </section>
 
-<jsp:include page="header.jsp"></jsp:include>
-
 <section class="section-more padding-small">
     <div class="container d-flex justify-content-between">
         <div class="col text-center">
-            <h1 class="pb-3">Menu główne </h1>
+            <h1 class="pb-3">VAT kwartalny </h1>
         </div>
     </div>
 </section>
@@ -78,34 +79,20 @@
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <button>
-                    <a href="http://localhost:8080/accounts/bill/add">
-                        <h1>Dodaj nową fakturę</h1>
+                        <h1>Pierwszy kwartał</h1>
                         <p>
-                            <br><br>
+                            <br>
+                            ${vatFirstQuarter} zł
+                            <br>
                         </p>
-                    </a>
-                </button>
             </div>
             <div class="col text-center pr-4 pl-4 mr-4 ml-4">
-                <button>
-                    <a href="http://localhost:8080/accounts/bill/all">
-                        <h1>Pokaż moje faktury</h1>
+                        <h1>Drugi kwartał</h1>
                         <p>
-                            <br><br>
+                            <br>
+                            ${vatSecondQuarter} zł
+                            <br>
                         </p>
-                    </a>
-                </button>
-            </div>
-            <div class="col text-center pr-4 pl-4 mr-4 ml-4">
-                <button>
-                    <a href="http://localhost:8080/accounts/consolidated/create">
-                        <h1>Wygeneruj bilans</h1>
-                        <p>
-                            <br><br>
-                        </p>
-                    </a>
-                </button>
             </div>
         </div>
     </div>
@@ -115,24 +102,20 @@
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <button>
-                    <a href="http://localhost:8080/accounts/consolidated/vatQuarters">
-                        <h1> VAT kwartalny</h1>
+                        <h1>Trzeci kwartał</h1>
                         <p>
-                            <br><br>
+                            <br>
+                            ${vatThirdQuarter} zł
+                            <br>
                         </p>
-                    </a>
-                </button>
             </div>
             <div class="col text-center pr-4 pl-4 mr-4 ml-4">
-                <button>
-                    <a href="http://localhost:8080/accounts/consolidated/taxQuarters">
-                        <h1> PIT kwartalny</h1>
+                        <h1>Czwarty kwartał</h1>
                         <p>
-                            <br><br>
+                            <br>
+                            ${vatFourthQuarter} zł
+                            <br>
                         </p>
-                    </a>
-                </button>
             </div>
         </div>
     </div>

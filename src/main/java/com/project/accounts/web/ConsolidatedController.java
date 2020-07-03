@@ -23,6 +23,8 @@ public class ConsolidatedController {
     private final BillRepository billRepository;
     private final ConsolidatedService consolidatedService;
 
+
+
     public ConsolidatedController(ConsolidatedRepository consolidatedRepository, BillRepository billRepository, ConsolidatedService consolidatedService) {
         this.consolidatedRepository = consolidatedRepository;
         this.billRepository = billRepository;
@@ -36,17 +38,39 @@ public class ConsolidatedController {
         List<Bill> billList = consolidatedService.searchBills(allByUser);
         double resultVat = consolidatedService.resultVat(billList);
         double resultPit = consolidatedService.resultTaxPit(billList);
+        model.addAttribute("resultVat", resultVat);
+        model.addAttribute("resultPit", resultPit);
+        return "consolidated";
+    }
+
+    @GetMapping(value = "/vatQuarters")
+    public String createVat(@AuthenticationPrincipal CurrentUser customUser, Model model){
+        User user = customUser.getUser();
+        List<Bill> allByUser = billRepository.findAllByUser(user);
         double vatFirstQuarter = consolidatedService.resultVatFirstQuarter(allByUser);
         double vatSecondQuarter = consolidatedService.resultVatSecondQuarter(allByUser);
         double vatThirdQuarter = consolidatedService.resultVatThirdQuarter(allByUser);
         double vatFourthQuarter = consolidatedService.resultVatFourthQuarter(allByUser);
-        model.addAttribute("resultVat", resultVat);
-        model.addAttribute("resultPit", resultPit);
         model.addAttribute("vatFirstQuarter", vatFirstQuarter);
         model.addAttribute("vatSecondQuarter", vatSecondQuarter);
         model.addAttribute("vatThirdQuarter", vatThirdQuarter);
         model.addAttribute("vatFourthQuarter", vatFourthQuarter);
-        return "consolidated";
+        return "vatQuarters";
+    }
+
+    @GetMapping(value = "/taxQuarters")
+    public String createPit(@AuthenticationPrincipal CurrentUser customUser, Model model){
+        User user = customUser.getUser();
+        List<Bill> allByUser = billRepository.findAllByUser(user);
+        double taxFirstQuarter = consolidatedService.pitTaxFirstQuarter(allByUser);
+        double taxSecondQuarter = consolidatedService.pitTaxSecondQuarter(allByUser);
+        double taxThirdQuarter = consolidatedService.pitTaxThirdQuarter(allByUser);
+        double taxFourthQuarter = consolidatedService.resultVatFourthQuarter(allByUser);
+        model.addAttribute("taxFirstQuarter", taxFirstQuarter);
+        model.addAttribute("taxSecondQuarter", taxSecondQuarter);
+        model.addAttribute("taxThirdQuarter", taxThirdQuarter);
+        model.addAttribute("taxFourthQuarter", taxFourthQuarter);
+        return "taxQuarters";
     }
 
 

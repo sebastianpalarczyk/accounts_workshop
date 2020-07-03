@@ -94,6 +94,54 @@ public class ConsolidatedService {
                 .mapToDouble(Bill::getVatAmount).sum();
     }
 
+    public double pitTaxFirstQuarter(List<Bill> bills){
+        double sumNetRevenue = sumNetRevenue(bills,0,4);
+        double sumNetCost = sumNetCost(bills,0,4);
+        return pitTax(sumNetRevenue,sumNetCost);
+    }
+
+    public double pitTaxSecondQuarter(List<Bill> bills){
+        double sumNetRevenue = sumNetRevenue(bills,3,7);
+        double sumNetCost = sumNetCost(bills,3,7);
+        return pitTax(sumNetRevenue,sumNetCost);
+    }
+
+    public double pitTaxThirdQuarter(List<Bill> bills){
+        double sumNetRevenue = sumNetRevenue(bills,6,10);
+        double sumNetCost = sumNetCost(bills,6,10);
+        return pitTax(sumNetRevenue,sumNetCost);
+    }
+
+    public double pitTaxFourthQuarter(List<Bill> bills){
+        double sumNetRevenue = sumNetRevenue(bills,9,13);
+        double sumNetCost = sumNetCost(bills,9,13);
+        return pitTax(sumNetRevenue,sumNetCost);
+    }
+
+    public double sumNetRevenue(List<Bill> bills, int a, int b){
+        return bills.stream()
+                .filter(e -> e.getDate().getYear() == year)
+                .filter(e -> e.getDate().getMonth().getValue() > a)
+                .filter(e -> e.getDate().getMonth().getValue() < b)
+                .filter(e -> e.getType().equals("P"))
+                .mapToDouble(Bill::getNetAmount).sum();
+    }
+
+    public double sumNetCost(List<Bill> bills, int a, int b){
+        return bills.stream()
+                .filter(e -> e.getDate().getYear() == year)
+                .filter(e -> e.getDate().getMonth().getValue() > a)
+                .filter(e -> e.getDate().getMonth().getValue() < b)
+                .filter(e -> e.getType().equals("K"))
+                .mapToDouble(Bill::getNetAmount).sum();
+    }
+
+    public double pitTax(double sumNetRevenue, double sumNetCost){
+        double taxBase = sumNetRevenue - sumNetCost - 735.19;
+        double taxPit = ((taxBase*18)/100 - 45.67);
+        return roundDouble(taxPit);
+    }
+
     public double roundDouble(double amount){
         amount *= 100;
         amount = Math.round(amount);
