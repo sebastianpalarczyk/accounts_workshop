@@ -1,5 +1,5 @@
 # accounts_workshop
-Web application was created for archiving invoices of the company and it automatically counts quartely taxes VAT and PIT.
+MVC application was created for archiving invoices of the company and it automatically counts quartely taxes VAT and PIT.
 
 ## Table of contents
 * [General info](#general-info)
