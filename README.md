@@ -16,6 +16,7 @@ Project is created with:
 * Spring Data JPA
 * Spring Data JDBC
 * Spring Security
+* Hibernate
 
 ## Status
 Project is finished.
