@@ -89,7 +89,7 @@
             </div>
             <div class="col text-center pr-4 pl-4 mr-4 ml-4">
                 <button>
-                    <a href="http:https://app-palarczyk.herokuapp.com/accounts/bill/all">
+                    <a href="https://app-palarczyk.herokuapp.com/accounts/bill/all">
                         <h1>Pokaż moje faktury</h1>
                         <p>
                             <br><br>
