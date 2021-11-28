@@ -34,6 +34,7 @@ public class BillController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @ResponseBody
     public String create(@ModelAttribute Bill bill,@AuthenticationPrincipal CurrentUser customUser){
         User user = customUser.getUser();
         bill.prePersist();
@@ -43,7 +44,7 @@ public class BillController {
         bill.setVatAmount(vatAmount);
         bill.setUser(user);
         billRepository.save(bill);
-        return "redirect:/accounts/bill/add";
+        return bill.toString();
     }
 
     @RequestMapping("/delete/{id}")
