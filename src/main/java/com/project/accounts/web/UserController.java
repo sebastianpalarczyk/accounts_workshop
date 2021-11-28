@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Controller
-@RequestMapping(value = "/user")
+@RequestMapping(value = "https://app-palarczyk.herokuapp.com/user")
 public class UserController {
 
     private final UserService userService;
