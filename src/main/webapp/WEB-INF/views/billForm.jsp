@@ -61,7 +61,7 @@
                         Faktura kosztowa <form:radiobutton path="type" value="K"/>
                     </div>
                     <div class="form-group">
-                        <label>Odliczenie VAT <br> <form:checkboxes  path="category" itemLabel="name" itemValue="id" items="${categories}"/></label>
+                        <label>Odliczenie podatku VAT <br> <form:checkboxes  path="category" itemLabel="name" itemValue="id" items="${categories}"/></label>
                     </div>
 
                     <button class="btn btn-color rounded-0" type="submit">Dodaj fakturę</button>
