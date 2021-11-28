@@ -36,6 +36,14 @@ public class BillController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public String create(@ModelAttribute Bill bill,@AuthenticationPrincipal CurrentUser customUser){
+        User user = customUser.getUser();
+        bill.prePersist();
+        double grossAmount = bill.getNetAmount()*1.23;
+        bill.setGrossAmount(grossAmount);
+        double vatAmount = grossAmount - bill.getNetAmount();
+        bill.setVatAmount(vatAmount);
+        bill.setUser(user);
+        billRepository.save(bill);
         return bill.toString();
     }
 
