@@ -27,7 +27,7 @@
     <div class="m-4 p-4 width-medium">
             <div class="m-4 p-4 border-dashed">
                 <h2 class="dashboard-content-title">
-                    <span>Dodane faktury</span>
+                    <span>Twoje faktury</span>
                 </h2>
                 <table class="table">
                     <tbody>
