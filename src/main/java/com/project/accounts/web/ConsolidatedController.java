@@ -65,7 +65,7 @@ public class ConsolidatedController {
         double taxFirstQuarter = consolidatedService.pitTaxFirstQuarter(allByUser);
         double taxSecondQuarter = consolidatedService.pitTaxSecondQuarter(allByUser);
         double taxThirdQuarter = consolidatedService.pitTaxThirdQuarter(allByUser);
-        double taxFourthQuarter = consolidatedService.resultVatFourthQuarter(allByUser);
+        double taxFourthQuarter = consolidatedService.pitTaxFourthQuarter(allByUser);
         model.addAttribute("taxFirstQuarter", taxFirstQuarter);
         model.addAttribute("taxSecondQuarter", taxSecondQuarter);
         model.addAttribute("taxThirdQuarter", taxThirdQuarter);
