@@ -11,7 +11,6 @@ public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate date;
     private String nameContractor;
     private String number;
