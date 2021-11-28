@@ -76,10 +76,10 @@
                             <c:out value = "${bill.grossAmount}"/>
                         </td>
                         <td class="col-2">
-                            <a href="http://localhost:8080/accouts/bill/updateForm/${bill.id}">Edytuj</a>
+                            <a href="https://app-palarczyk.herokuapp.com/accouts/bill/updateForm/${bill.id}">Edytuj</a>
                         </td>
                         <td class="col-2">
-                            <a href="http://localhost:8080/accounts/bill/delete/${bill.id}">Usuń</a>
+                            <a href="https://app-palarczyk.herokuapp.com/bill/delete/${bill.id}">Usuń</a>
                         </td>
                     </tr>
                    </c:forEach>
