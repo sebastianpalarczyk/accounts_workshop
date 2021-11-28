@@ -79,7 +79,7 @@
                             <a href="https://app-palarczyk.herokuapp.com/accouts/bill/updateForm/${bill.id}">Edytuj</a>
                         </td>
                         <td class="col-2">
-                            <a href="https://app-palarczyk.herokuapp.com/bill/delete/${bill.id}">Usuń</a>
+                            <a href="https://app-palarczyk.herokuapp.com/accounts/bill/delete/${bill.id}">Usuń</a>
                         </td>
                     </tr>
                    </c:forEach>
