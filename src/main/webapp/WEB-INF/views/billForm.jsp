@@ -43,7 +43,7 @@
                 <form:form method="POST" modelAttribute="bill" class="padding-small text-center">
                     <h1 class="text-color-darker">Dodaj fakturę</h1>
                     <div class="form-group">
-                        <form:input path="date" type="text" class="form-control" placeholder="Data"/>
+                        <form:input path="date" type="date" class="form-control" placeholder="Data"/>
                     </div>
                     <div class="form-group">
                         <form:input path="nameContractor" type="text" class="form-control" placeholder="Nazwa kontrahenta"/>

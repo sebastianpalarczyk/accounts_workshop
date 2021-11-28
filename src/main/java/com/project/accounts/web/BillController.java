@@ -43,7 +43,6 @@ public class BillController {
         double vatAmount = grossAmount - bill.getNetAmount();
         bill.setVatAmount(vatAmount);
         bill.setUser(user);
-        bill.setDate(bill.getDate());
         billRepository.save(bill);
         return bill.toString();
     }
