@@ -13,10 +13,10 @@
         </a>
         <ul class="nav nounderline text-uppercase">
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="https://app-palarczyk.herokuapp.com/  login">Logowanie</a>
+                <a class="nav-link color-header" href="https://app-palarczyk.herokuapp.com">Logowanie</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="https://app-palarczyk.herokuapp.com/user/add">Rejestracja</a>
+                <a class="nav-link color-header" href="https://app-palarczyk.herokuapp.com">Rejestracja</a>
             </li>
             <li class="nav-item ml-4">
                 <a class="nav-link" href="https://app-palarczyk.herokuapp.com/accounts/menu">Menu</a>
