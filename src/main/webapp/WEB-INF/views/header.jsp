@@ -13,16 +13,16 @@
         </a>
         <ul class="nav nounderline text-uppercase">
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="http://localhost:8080/login">Logowanie</a>
+                <a class="nav-link color-header" href="https://app-palarczyk.herokuapp.com/  login">Logowanie</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="http://localhost:8080/user/add">Rejestracja</a>
+                <a class="nav-link color-header" href="https://app-palarczyk.herokuapp.com/user/add">Rejestracja</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link" href="http://localhost:8080/accounts/menu">Menu</a>
+                <a class="nav-link" href="https://app-palarczyk.herokuapp.com/accounts/menu">Menu</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link" href="http://localhost:8080/accounts/logout">Wyloguj</a>
+                <a class="nav-link" href="https://app-palarczyk.herokuapp.com/accounts/logout">Wyloguj</a>
             </li>
         </ul>
     </nav>
