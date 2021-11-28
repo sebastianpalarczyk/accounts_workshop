@@ -79,7 +79,7 @@
         <div class="row">
             <div class="col text-center">
                 <button>
-                    <a href="http://localhost:8080/accounts/bill/add">
+                    <a href="https://app-palarczyk.herokuapp.com/accounts/bill/add">
                         <h1>Dodaj nową fakturę</h1>
                         <p>
                             <br><br>
@@ -89,7 +89,7 @@
             </div>
             <div class="col text-center pr-4 pl-4 mr-4 ml-4">
                 <button>
-                    <a href="http://localhost:8080/accounts/bill/all">
+                    <a href="http:https://app-palarczyk.herokuapp.com/accounts/bill/all">
                         <h1>Pokaż moje faktury</h1>
                         <p>
                             <br><br>
@@ -99,7 +99,7 @@
             </div>
             <div class="col text-center pr-4 pl-4 mr-4 ml-4">
                 <button>
-                    <a href="http://localhost:8080/accounts/consolidated/create">
+                    <a href="https://app-palarczyk.herokuapp.com/accounts/consolidated/create">
                         <h1>Wygeneruj bilans</h1>
                         <p>
                             <br><br>
@@ -116,7 +116,7 @@
         <div class="row">
             <div class="col text-center">
                 <button>
-                    <a href="http://localhost:8080/accounts/consolidated/vatQuarters">
+                    <a href="https://app-palarczyk.herokuapp.com/accounts/consolidated/vatQuarters">
                         <h1> VAT kwartalny</h1>
                         <p>
                             <br><br>
@@ -126,7 +126,7 @@
             </div>
             <div class="col text-center pr-4 pl-4 mr-4 ml-4">
                 <button>
-                    <a href="http://localhost:8080/accounts/consolidated/taxQuarters">
+                    <a href="https://app-palarczyk.herokuapp.com/accounts/consolidated/taxQuarters">
                         <h1> PIT kwartalny</h1>
                         <p>
                             <br><br>
