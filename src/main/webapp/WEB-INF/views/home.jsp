@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col text-center">
                 <button>
-                    <a href="http://localhost:8080/user/add">
+                    <a href="https://app-palarczyk.herokuapp.com/user/add">
                 <h1>Załóż nowe konto</h1>
                 <p>
                     <br><br><br>
@@ -88,7 +88,7 @@
             </div>
             <div class="col text-center pr-4 pl-4 mr-4 ml-4">
                 <button>
-                    <a href="http://localhost:8080/login">
+                    <a href="https://app-palarczyk.herokuapp.com/login">
                 <h1>Logowanie</h1>
                 <p>
                   <br><br><br>
