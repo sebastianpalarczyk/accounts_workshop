@@ -1,0 +1,44 @@
+section {
+    height: 500px;
+    clear: both;
+    margin-top: 0px;
+}
+
+
+.section--image {
+    background-image: url("/images/home.png");
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section__header {
+    max-width:100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.section__fieldset {
+    margin-top: 80px;
+    margin-left: 40px;
+    max-width: 450px;
+    
+}
+
+.section__div {
+    margin: 5px;
+}
+
+.section__input {
+    min-width: 433px;
+}
+
+.section__button {
+    min-width: 433px;
+    background-color: teal;
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: teal;
+    
+}
