@@ -1,27 +1,31 @@
 section {
-    height: 500px;
-    clear: both;
-    margin-top: 0px;
+    height: 600px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 
 .section--image {
     background-image: url("/images/home.png");
-    height: 450px;
+    height: 400px;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction:column;
 }
 
 .section__header {
-    max-width:100%;
     text-align: center;
-    margin-top: 20px;
 }
 
 .section__fieldset {
     margin-top: 80px;
     margin-left: 40px;
     max-width: 450px;
+    max-height: 235px;
     
 }
 
@@ -30,15 +34,25 @@ section {
 }
 
 .section__input {
-    min-width: 433px;
+    min-width: 424px;
 }
 
 .section__button {
-    min-width: 433px;
+    min-width: 424px;
     background-color: teal;
     color: whitesmoke;
     padding: 5px;
     border-radius: 5px;
     border-color: teal;
-    
+    cursor: pointer;
+}
+
+.section__div--image {
+   background-image: url("/images/home-2.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 450px;
+   height: 235px;
+   margin-top: 80px;
+   
 }

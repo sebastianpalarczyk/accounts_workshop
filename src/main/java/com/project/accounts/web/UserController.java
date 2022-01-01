@@ -17,17 +17,15 @@ import java.util.Set;
 public class UserController {
 
     private final UserService userService;
-    private final RoleRepository roleRepository;
 
-    public UserController(UserService userService, RoleRepository roleRepository) {
+    public UserController(UserService userService) {
         this.userService = userService;
-        this.roleRepository = roleRepository;
     }
 
     @GetMapping("/add")
     public String getForm(Model model) {
         model.addAttribute("user", new User());
-        return "userForm";
+        return "register";
     }
 
     @PostMapping("/add")

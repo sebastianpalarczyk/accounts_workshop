@@ -22,15 +22,25 @@
                 <link rel="stylesheet" href="<c:url value="../css/section.css"/>"/>
                 <link rel="stylesheet" href="<c:url value="../css/navigation.css"/>"/>
             </head>
-<body>
+
+<body class="body">
                 <nav class="navigation">
-                    <div class="navigation__div">Aplikacja księgowa</div>
-                   <a href="https://app-palarczyk.herokuapp.com/login">
-                    <div class="navigation__div navigation__div--login">Zaloguj</div>
-                   </a>
-                   <a href="https://app-palarczyk.herokuapp.com/user/add">
-                    <div class="navigation__div navigation__div--newAccount">Załóż nowe konto</div>
-                   </a>
+                    <div class="navigation__div navigation__div--logo">
+                        <label class="navigation__label">Aplikacja księgowa </label>
+                    </div>
+
+                    <div class="navigation__div">
+                        <a class="navigation__anchor" href="https://app-palarczyk.herokuapp.com/login">
+                            <label class="navigation__label--login">Zaloguj</label>
+                        </a>
+                    </div>
+
+                    <div class="navigation__div">
+                        <a class="navigation__anchor" href="https://app-palarczyk.herokuapp.com/user/add">
+                            <label class="navigation__label--newAccount">Załóż nowe konto</label>
+                        </a>
+                    </div>
+
                 </nav>
                 <main class="main">
                     <section class="section--image">
@@ -46,13 +56,15 @@
                                 <input class="section__input" type="text" placeholder="Temat"/>
                             </div>
                             <div class="section__div">
-                               <textarea class="section__textarea" cols="46" rows="10">Treść wiadomości</textarea>
+                               <textarea class="section__textarea" cols="45" rows="5">Treść wiadomości</textarea>
                             </div>
                             <div class="section__div">
                                 <button class="section__button" type="submit">Wyślij wiadomość</button>
                             </div>
                            </fieldset>
+                           <div class="section__div--image"></div>
                     </section>
                 </main>
-</body>
+
+            </body>
 </html>

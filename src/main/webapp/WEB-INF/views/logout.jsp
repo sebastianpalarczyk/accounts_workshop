@@ -22,7 +22,7 @@
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
-<%--<a href="http://localhost:8080/accounts/menu">Powrót do menu</a><br>--%>
+<%--<a href="https://app-palarczyk.herokuapp.com/accounts/menu">Powrót do menu</a><br>--%>
 <%--<form action="<c:url value="/logout"/>" method="post">--%>
 <%--    <input class="fa fa-id-badge" type="submit" value="Wyloguj">--%>
 <%--    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
@@ -35,7 +35,7 @@
                     <h1 class="text-color-darker">Wyloguj</h1>
                     <button class="btn btn-color rounded-0" type="submit">Tak</button>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <a class="btn btn-color rounded-0" type="submit" href="http://localhost:8080/accounts/menu">Nie</a></button>
+                    <a class="btn btn-color rounded-0" type="submit" href="https://app-palarczyk.herokuapp.com/">Nie</a></button>
                 </form>
             </div>
         </div>
