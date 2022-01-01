@@ -35,7 +35,7 @@
                     <h1 class="text-color-darker">Wyloguj</h1>
                     <button class="btn btn-color rounded-0" type="submit">Tak</button>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <a class="btn btn-color rounded-0" type="submit" href="https://app-palarczyk.herokuapp.com/">Nie</a></button>
+                    <a class="btn btn-color rounded-0" type="submit" href="https://app-palarczyk.herokuapp.com/accounts/menu">Nie</a></button>
                 </form>
             </div>
         </div>
