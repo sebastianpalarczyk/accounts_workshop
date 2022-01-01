@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="pl">
 <head>
             <meta charset="UTF-8">
@@ -16,7 +17,7 @@
 <body class="body">
 
     <div class="form__div">
-        <form class="form" method="POST">
+        <form:form class="form" method="POST" modelAttribute="user">
             <div class="form__div--label">
                 <a href="http://localhost:8080/" class="form__anchor">
                    <label class="form__label--app">Aplikacja księgowa</label>
@@ -24,29 +25,29 @@
             </div>
             <div class="form__div--label">
                 <label>
-                    <strong>Zaloguj</strong> się do aplikacji
+                    <strong>Zarejestruj</strong> się do aplikacji
                 </label>
             </div>
             <div class="form__div--input">
                 <label class="form__label">
-                    <input class="form__input" type="text" name="username" placeholder="Nazwa użytkownika"/>
+                    <form:input path="username" class="form__input"  type="text" placeholder="Nazwa użytkownika"/>
                 </label>
             </div>
             <div class="form__div--input">
                 <label class="form__label">
-                    <input class="form__input" type="password" name="password" placeholder="Hasło"/>
+                    <form:input path="password" type="password" class="form__input" placeholder="Podaj hasło"/>
                 </label>
             </div>
             <div class="form__div--label">
-                <button class="form__button" type="submit"> ZALOGUJ SIĘ </button>
+                <button class="form__button" type="submit"> ZAŁÓŻ KONTO </button>
             </div>
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
             <div class="form__div--label">
                 <label>
-                    Kliknij jeśli <a class="form__anchor form__anchor--blue" href="http://localhost:8080/user/add"> nie masz konta </a>
+                    Kliknij jeśli <a class="form__anchor form__anchor--blue" href="http://localhost:8080/login">masz już konto </a>
                 </label>
             </div>
-        </form>
+        </form:form>
     </div>
 </body>
 </html>

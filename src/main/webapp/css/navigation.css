@@ -1,30 +1,48 @@
 .navigation {
-    min-height: 56px;
-    max-with: 100%;
-    margin-bottom: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-bottom:0%;
 }
 
-.navigation__div {
-    float: left;
-    margin: 20px;
-    padding: 10px;
-    background-color: rgb(50, 50, 255);
-    border-radius: 5px;
-    color: wheat;
+.navigation__div--logo{
+  flex-grow: 4;
 }
 
-.navigation__div--login {
-    margin-left: 73%;
+.navigation__label--login {
     background-color: blanchedalmond;
+    padding: 10px;
     border-radius: 5px;
     border: black solid 1px;
-    color: black
+    color: black;
+    margin: 15px;
+    display: block;
+    cursor: pointer;
 }
 
-.navigation__div--newAccount {
-    margin-left: 20px;
+
+.navigation__label--newAccount {
+    margin: 15px;
+    padding: 10px;
     background-color: blanchedalmond;
     border-radius: 5px;
     border: black solid 1px;
     color:black;
+    display: block;
+    cursor: pointer;
+}
+
+.navigation__label {
+    background-color: rgb(38, 117, 237);
+    padding: 10px;
+    border-radius: 5px;
+    color: wheat;
+    display: block;
+    margin: 15px;
+    max-width: 155px;
+}
+
+.navigation__anchor {
+    text-decoration: none;
 }
