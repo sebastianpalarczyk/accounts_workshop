@@ -19,7 +19,7 @@ Project is created with:
 * Hibernate
 
 ## Status
-Project is finished.
+The project is undergoing changes.
 
 ## Inspiration
 The purpose of the project was to use acquired knowledge from the course in practice.
