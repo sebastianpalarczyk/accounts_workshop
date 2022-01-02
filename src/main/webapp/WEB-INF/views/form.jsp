@@ -22,7 +22,7 @@
     <div class="form__div">
         <form:form class="form form--bill" method="POST" modelAttribute="bill">
            <div class="form__div--label">
-                           <a href="https://app-palarczyk.herokuapp.com/menu" class="form__anchor">
+                           <a href="https://app-palarczyk.herokuapp.com/accounts/menu" class="form__anchor">
                               <label class="form__label--app">Menu</label>
                            </a>
                        </div>
