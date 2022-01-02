@@ -1,0 +1,116 @@
+.navigation {
+    display: flex;
+    width: 100%;
+}
+
+.navigation__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navigation__listRow{
+    display: block;
+    flex-grow: 4;
+}
+
+.navigation__listRow--last{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    background-image: url("/images/logout.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.navigation__label {
+    background-color: rgb(38, 117, 237);
+    padding: 10px;
+    border-radius: 5px;
+    color: wheat;
+    display: block;
+    margin: 15px;
+    max-width: 150px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.navigation__anchor {
+    text-decoration: none;
+}
+
+.section {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-height: 800px;
+}
+
+.section__div {
+    flex-grow: 4;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section__div--navigation{
+     width: 200px;
+}
+
+.section__list {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.section__listRow{
+    background-color: rgb(38, 117, 237);
+    padding: 10px;
+    border-radius: 5px;
+    color: wheat;
+    display: block;
+    margin: 15px;
+    max-width: 150px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.section__div--screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin:65px;
+    flex-basis: 450px;
+    flex-shrink: 2;
+    
+}
+
+.section__label{
+    background-color: rgb(38, 117, 237);
+    padding: 30px;
+    border-radius: 5px;
+    color: wheat;
+    flex-basis: 300px;
+    margin: 15px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 25px;
+    max-height: 100px;
+    
+}
+.section__label--white{
+    padding: 30px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.section__anchor {
+    text-decoration: none;
+}
