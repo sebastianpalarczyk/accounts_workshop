@@ -55,7 +55,7 @@ public class ConsolidatedController {
         model.addAttribute("vatSecondQuarter", vatSecondQuarter);
         model.addAttribute("vatThirdQuarter", vatThirdQuarter);
         model.addAttribute("vatFourthQuarter", vatFourthQuarter);
-        return "vatQuarters";
+        return "vat";
     }
 
     @GetMapping(value = "/taxQuarters")
@@ -70,7 +70,7 @@ public class ConsolidatedController {
         model.addAttribute("taxSecondQuarter", taxSecondQuarter);
         model.addAttribute("taxThirdQuarter", taxThirdQuarter);
         model.addAttribute("taxFourthQuarter", taxFourthQuarter);
-        return "taxQuarters";
+        return "pit";
     }
 
 

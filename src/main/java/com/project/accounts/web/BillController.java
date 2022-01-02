@@ -53,7 +53,7 @@ public class BillController {
     public String delete(@PathVariable long id) {
         Optional<Bill> bill = billRepository.findById(id);
         billRepository.delete(bill.get());
-        return "redirect:/accounts/bill/all";
+        return "redirect:/accounts/menu";
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
