@@ -91,7 +91,7 @@
                     <c:out value = "${bill.grossAmount}"/>
                 </td>
                 <td class="section__tabelCell">
-                    <a href="http://localhost:8080/accouts/bill/updateForm/${bill.id}" class="section__anchor">
+                    <a href="http://localhost:8080/accounts/bill/update/${bill.id}" class="section__anchor">
                         <label class="section__tabelLabel">Edycja</label>
                     </a>
                 </td>
