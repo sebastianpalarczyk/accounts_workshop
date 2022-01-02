@@ -11,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,7 +33,7 @@ public class BillController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String getForm(Model model) {
         model.addAttribute("bill", new Bill());
-        return "billForm";
+        return "form";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
@@ -43,7 +46,7 @@ public class BillController {
         bill.setVatAmount(vatAmount);
         bill.setUser(user);
         billRepository.save(bill);
-        return "redirect:/accounts/bill/add";
+       return "redirect:/accounts/bill/add";
     }
 
     @RequestMapping("/delete/{id}")
