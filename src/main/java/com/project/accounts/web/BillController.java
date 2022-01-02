@@ -11,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,11 +33,11 @@ public class BillController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String getForm(Model model) {
         model.addAttribute("bill", new Bill());
-        return "billForm";
+        return "form";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String create(@ModelAttribute Bill bill, @AuthenticationPrincipal CurrentUser customUser){
+    public String create(@ModelAttribute Bill bill,@AuthenticationPrincipal CurrentUser customUser){
         User user = customUser.getUser();
         bill.prePersist();
         double grossAmount = bill.getNetAmount()*1.23;
@@ -43,15 +46,43 @@ public class BillController {
         bill.setVatAmount(vatAmount);
         bill.setUser(user);
         billRepository.save(bill);
-        return "redirect:/accounts/bill/add";
+       return "redirect:/accounts/bill/add";
     }
 
-    @RequestMapping("/delete/{id}")
+    @RequestMapping(value = "/delete/{id}")
     public String delete(@PathVariable long id) {
         Optional<Bill> bill = billRepository.findById(id);
         billRepository.delete(bill.get());
         return "redirect:/accounts/bill/all";
     }
+
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String updateForm(@PathVariable Long id, Model model){
+        Optional<Bill> bill = billRepository.findById(id);
+        model.addAttribute("billUpdate", bill.get());
+        return "updateForm";
+    }
+
+    @RequestMapping(value="/update/{id}", method = RequestMethod.POST)
+    public String updateBill(@PathVariable Long id, @ModelAttribute Bill bill, @AuthenticationPrincipal CurrentUser customUser){
+        User user = customUser.getUser();
+        Optional<Bill> updateBill = billRepository.findById(id);
+        updateBill.get().preUpdate();
+        double grossAmount = bill.getNetAmount()*1.23;
+        double vatAmount = grossAmount - bill.getNetAmount();
+        updateBill.get().setNumber(bill.getNumber());
+        updateBill.get().setNameContractor(bill.getNameContractor());
+        updateBill.get().setDate(bill.getDate());
+        updateBill.get().setNetAmount(bill.getNetAmount());
+        updateBill.get().setVatAmount(vatAmount);
+        updateBill.get().setGrossAmount(grossAmount);
+        updateBill.get().setType(bill.getType());
+        updateBill.get().setCategory(bill.getCategory());
+        updateBill.get().setUser(user);
+        billRepository.save(updateBill.get());
+        return "redirect:/accounts/menu";
+    }
+
 
     @GetMapping("/all")
     public String getAll(Model model, @AuthenticationPrincipal CurrentUser customUser){

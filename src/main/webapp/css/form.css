@@ -2,12 +2,18 @@
     background-color: white;
     margin-top: 15%;
     border-radius: 5px;
-    max-height: 380px;
+    max-height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.72); 
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.72); 
+}
+
+.form--bill {
+   min-height: 480px;
+   margin-top: 12%;
+   max-height: 550px;
 }
 
 .form__div {
@@ -26,26 +32,45 @@
     margin: 30px 0px;
 }
 
+.form__input--date {
+    width: 225px;
+}
+
 .form__input {
     margin: auto;
     padding: 10px;
 }
 
+.form__input--radio {
+    margin: 0px 20px;
+}
+
+.form__input--radioCost {
+    margin: 0px 35px;
+}
+
 .form__label {
-    margin: 10px 20px;
+    margin: 5px 20px;
+}
+
+.form__label--center {
+    text-align: center;
+    display: block;
+    margin: 5px 0px;
 }
 
 .form__label--app {
     background-color: rgb(38, 117, 237);;
     color: wheat;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
-    margin-top: 35px;
     cursor: pointer;
+    display: block;
+
 }
 
 .form__button {
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     background-color: rgb(36, 186, 74);
     color: honeydew;
@@ -60,4 +85,9 @@
 .form__anchor--blue {
     color:rgb(38, 117, 237);
 }
+
+.form__span {
+    margin: 5px;
+}
+
 
