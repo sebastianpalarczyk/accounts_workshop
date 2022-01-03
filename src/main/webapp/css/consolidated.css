@@ -39,7 +39,6 @@
     margin: 15px;
     max-width: 150px;
     cursor: pointer;
-    text-align: center;
 }
 
 .navigation__anchor {
@@ -84,10 +83,10 @@
 .section__div--screen{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    margin:65px;
-    flex-basis: 450px;
+    margin:35px;
+    flex-basis: 354px;
     flex-shrink: 2;
     
 }
