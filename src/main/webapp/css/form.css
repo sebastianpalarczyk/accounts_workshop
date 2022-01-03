@@ -78,6 +78,10 @@
     cursor: pointer;
 }
 
+.form__button--logout{
+     width: 238px;
+}
+
 .form__anchor {
     text-decoration: none;
 }
@@ -88,6 +92,16 @@
 
 .form__span {
     margin: 5px;
+}
+
+.form__label--logout{
+    background-color: rgb(38, 117, 237);;
+    color: wheat;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    min-width: 238px;
 }
 
 
