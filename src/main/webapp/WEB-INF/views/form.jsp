@@ -43,7 +43,7 @@
                        </div>
                        <div class="form__div--input">
                            <label class="form__label">
-                               <form:input path="netAmount" class="form__input" type="number" placeholder="Kwota netto"/>
+                               <form:input path="netAmount" class="form__input" type="number" step="0.01" placeholder="Kwota netto"/>
                            </label>
                        </div>
                        <div class="form__div--input">
